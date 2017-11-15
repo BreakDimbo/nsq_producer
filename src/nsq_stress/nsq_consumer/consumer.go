@@ -22,8 +22,8 @@ var consumers map[string]*nsq.Consumer
 // InitSub 初始化 Consumer 的配置
 func InitSub() {
 	cfg := nsq.NewConfig()
-
-	lookupHost := "47.93.79.149"
+	consumers = make(map[string]*nsq.Consumer)
+	lookupHost := "127.0.0.1"
 	lookupPort := 4161
 	nsqLookUpAddress := fmt.Sprintf("%s:%d", lookupHost, lookupPort)
 	nsqdHost := "47.93.79.149"
