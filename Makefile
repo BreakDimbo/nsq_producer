@@ -6,7 +6,7 @@ nsq_producer:
 	go build -o bin/producer nsq_stress/nsq_producer
 
 nsq_consumer:
-	go build -o bin/producer nsq_stress/nsq_consumer
+	go build -o bin/consumer nsq_stress/nsq_consumer
 
 deps:
 	@echo "Install Installing dependencies"
