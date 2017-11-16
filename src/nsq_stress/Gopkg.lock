@@ -8,6 +8,18 @@
   revision = "553a641470496b2327abcac10b36396bd98e45c9"
 
 [[projects]]
+  name = "github.com/gorilla/context"
+  packages = ["."]
+  revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
+  version = "v1.1"
+
+[[projects]]
+  name = "github.com/gorilla/mux"
+  packages = ["."]
+  revision = "7f08801859139f86dfafd1c296e2cba9a80d292e"
+  version = "v1.6.0"
+
+[[projects]]
   name = "github.com/nsqio/go-nsq"
   packages = ["."]
   revision = "eee57a3ac4174c55924125bb15eeeda8cffb6e6f"
@@ -16,6 +28,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "45e1a05e449e98fc8f0a5c3f43c8202780fb331c45e02cca3494bd3d473dd84d"
+  inputs-digest = "ddea1dd1aa1ce42c62d494ee6378c4890d6cce908a03d1bc60389fbce7e604a2"
   solver-name = "gps-cdcl"
   solver-version = 1

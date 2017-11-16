@@ -1,5 +1,8 @@
 package main
 
+import "nsq_stress/nsq_producer/producer"
+
 func main() {
-	StartProduce()
+	go producer.StartProduce()
+	ListenAndServe()
 }
