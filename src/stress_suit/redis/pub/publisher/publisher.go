@@ -39,6 +39,20 @@ func UpdateCount(count int) {
 	cCount = count
 }
 
+func SetCount(startCount int, endCount int) {
+	if endCount <= cCount || startCount <= cCount {
+		return
+	}
+
+	for index := startCount; index < endCount; index++ {
+		topic := "nsq_crazy_topic_" + strconv.Itoa(index)
+		fmt.Printf("topic: %s /n", topic)
+
+		go pub(topic, "crazy Message!")
+	}
+	cCount = endCount
+}
+
 func Stop() {
 	stop = true
 }

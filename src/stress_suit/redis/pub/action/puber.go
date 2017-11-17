@@ -19,6 +19,16 @@ func Stop(res http.ResponseWriter, req *http.Request) {
 	publisher.Stop()
 }
 
+func Set(res http.ResponseWriter, req *http.Request) {
+	start := queryParam(req, "start")
+	end := queryParam(req, "end")
+	startCount, _ := strconv.Atoi(start)
+	endCount, _ := strconv.Atoi(end)
+	fmt.Printf("Mad producer with count: %d", startCount)
+	fmt.Printf("Mad producer with count: %d", endCount)
+	publisher.SetCount(startCount, endCount)
+}
+
 func queryParam(req *http.Request, key string) string {
 	return req.URL.Query().Get(key)
 }

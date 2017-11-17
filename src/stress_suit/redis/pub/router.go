@@ -12,5 +12,6 @@ func NewRouter() http.Handler {
 
 	router.HandleFunc("/redis/pub/topics", action.Mad).Methods("POST")
 	router.HandleFunc("/redis/pub/stop", action.Stop).Methods("POST")
+	router.HandleFunc("/redis/pub/set", action.Set).Methods("POST")
 	return router
 }
