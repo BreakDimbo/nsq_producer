@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	pool.Init("127.0.0.1:6704")
+	pool.Init("47.93.79.149:6704")
 	publisher.Init()
 	go publisher.StartPub()
 	ListenAndServe()
