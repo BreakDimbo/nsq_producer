@@ -2,6 +2,7 @@ package pool
 
 import (
 	"flag"
+	"fmt"
 	"time"
 
 	"github.com/garyburd/redigo/redis"
@@ -17,7 +18,13 @@ func Init(addr string) {
 }
 
 func GetConn() redis.Conn {
-	return pool.Get()
+	c := pool.Get()
+	_, err := c.Do("AUTH", "ORjPtnqVDlrlnkP5KoT5")
+	if err != nil {
+		fmt.Printf("failed to auth redis. cache disabled.err:%s", err.Error())
+		return nil
+	}
+	return c
 }
 
 func newPool(addr string) *redis.Pool {

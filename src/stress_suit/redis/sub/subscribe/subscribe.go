@@ -50,7 +50,11 @@ func sub(topic string) {
 		psc := redis.PubSubConn{Conn: c}
 
 		// Set up subscriptions
-		psc.Subscribe(topic)
+		err := psc.Subscribe(topic)
+		if err != nil {
+			fmt.Printf("Subscribe Error: %s", err)
+			return
+		}
 
 		// While not a permanent error on the connection.
 		for c.Err() == nil && !stop {
@@ -60,7 +64,8 @@ func sub(topic string) {
 			case redis.Subscription:
 				fmt.Printf("%s: %s %d\n", v.Channel, v.Kind, v.Count)
 			case error:
-				fmt.Print(c.Err())
+				fmt.Print("receive Error")
+				return
 			}
 		}
 		c.Close()

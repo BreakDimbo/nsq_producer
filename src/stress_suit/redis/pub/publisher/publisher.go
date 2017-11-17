@@ -49,7 +49,10 @@ func pub(topic string, message string) {
 	defer c.Close()
 
 	for !stop {
-		c.Send("PUBLISH", topic, message)
+		err := c.Send("PUBLISH", topic, message)
+		if err != nil {
+			fmt.Printf("Send Message error: %s", err)
+		}
 		time.Sleep(3000 * time.Millisecond)
 	}
 }
