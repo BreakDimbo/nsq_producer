@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/garyburd/redigo"
+  packages = ["internal","redis"]
+  revision = "47dc60e71eed504e3ef8e77ee3c6fe720f3be57f"
+  version = "v1.3.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/golang/snappy"
   packages = ["."]
@@ -28,6 +34,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "ddea1dd1aa1ce42c62d494ee6378c4890d6cce908a03d1bc60389fbce7e604a2"
+  inputs-digest = "152e7b5ac0cb7a52a90c54f1a169735fa0a361018299ffa1bba56388410f6e7a"
   solver-name = "gps-cdcl"
   solver-version = 1
