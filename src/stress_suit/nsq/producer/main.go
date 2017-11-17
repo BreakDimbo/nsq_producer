@@ -1,6 +1,6 @@
 package main
 
-import "nsq_stress/nsq_producer/producer"
+import "stress_suit/nsq/producer/producer"
 
 func main() {
 	go producer.StartProduce()

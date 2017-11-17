@@ -3,8 +3,8 @@ package action
 import (
 	"fmt"
 	"net/http"
-	"nsq_stress/nsq_producer/producer"
 	"strconv"
+	"stress_suit/nsq/producer/producer"
 )
 
 func Mad(res http.ResponseWriter, req *http.Request) {

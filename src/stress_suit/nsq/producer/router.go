@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	"nsq_stress/nsq_producer/action"
+	"stress_suit/nsq/producer/action"
 
 	"github.com/gorilla/mux"
 )
